@@ -1,12 +1,10 @@
 // 可以使用 | 来连接多个类型（联合类型）
 let b: 'male' | 'female';
-
 b = 'male';
 b = 'female';
 b = 123;
 
 let c: boolean | string;
-
 c = true;
 c = 'hello';
 c = 123;
@@ -14,20 +12,17 @@ c = 123;
 // 变量指定为 any，相当于关闭了 TS 的类型检测
 let d: any;
 // let d;  // 隐式的 any
-
 d = 10;
 d = 'hello';
 d = true;
 
 // unknown 表示未知类型
 let e: unknown;
-
 e = 10;
 e = 'hello';
 e = true;
 
 let s: string;
-
 // d 的类型是 any，所以可以赋值给任意变量（连带着把 s 的类型检测也给破坏了）
 s = d;
 
