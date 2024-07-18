@@ -1,0 +1,17 @@
+{
+  /*
+    tsconfig.json 是 TS 编译器的配置文件
+
+    "include" 用来指定哪些 ts 文件需要被编译
+      路径：** 表任意目录
+            * 表任意文件
+  */
+
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "./src/hello/**/*"
+  ]
+}
