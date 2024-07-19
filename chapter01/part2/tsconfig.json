@@ -13,5 +13,12 @@
   "exclude": [
     "node_modules",
     "./src/hello/**/*"
-  ]
+  ],
+  /*
+    "compilerOptions" 编译器选项
+  */
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+  }
 }
