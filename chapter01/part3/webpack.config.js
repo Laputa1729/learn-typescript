@@ -1,7 +1,8 @@
-// 引入path模块
+// 引入 path 模块
 const path = require('path');
-// 引入html-webpack-plugin插件
+// 引入 html-webpack-plugin 插件
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+// 自动清除 dist 文件夹
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 // 暴露配置
@@ -26,7 +27,27 @@ module.exports = {
         // 匹配文件
         test: /\.ts$/,
         // 使用的 loader
-        use: 'ts-loader',
+        use: [
+          {
+            loader: 'babel-loader',
+            // 配置 babel
+            options: {
+              presets: [
+                [
+                  '@babel/preset-env',
+                  {
+                    // 指定环境
+                    targets: {
+                      // 浏览器环境
+                      browsers: ['> 1%', 'last 2 versions'],
+                    },
+                  },
+               ],
+              ]
+            }
+          },
+          'ts-loader'
+        ],
         // 排除文件
         exclude: /node_modules/,
       },
