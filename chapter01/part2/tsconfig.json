@@ -18,7 +18,23 @@
     "compilerOptions" 编译器选项
   */
   "compilerOptions": {
-    "target": "ES6",
-    "module": "commonjs",
+    "target": "ES6",  // 编译目标 ES 版本
+    "module": "commonjs",  // 模块化规范
+    "outDir": "./dist",  // 编译后的文件存放目录
+    // "outFile": "./dist/bundle.js",  // 将代码压缩到一个文件，所有全局作用域的代码都会被合并到一个文件中
+    "allowJs": false,  // 是否允许连 js 文件一起编译，默认是 false
+    "checkJs": false,  // 是否检查 js 文件，默认是 false
+    "removeComments": false,  // 是否移除注释，默认是 false
+    "noEmit": false,  // 要不要开启编译的开关
+    "noEmitOnError": true,  // 编译出错不要生成文件，默认是 false
+    /* 语法检查相关 */
+    "strict": false,  // 所有严格检查项的总开关，默认是 false
+    "alwaysStrict": false,  // 是否强制使用严格模式，默认是 false
+    "strictNullChecks": false,  // 严格检查空值，默认是 false
+    "noImplicitAny": false,  // 是否允许隐式 any 类型，默认是 false
+    "noImplicitThis": true,  // 是否允许隐式 this 类型，默认是 false
+    "noUnusedLocals": false,  // 是否允许未使用的局部变量，默认是 false
+    "noUnusedParameters": false,  // 是否允许未使用的参数，默认是 false
+    "noFallthroughCasesInSwitch": false, // 是否允许 switch 语句没有 break，默认是 false
   }
 }
