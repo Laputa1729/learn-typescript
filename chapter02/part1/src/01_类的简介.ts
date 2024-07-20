@@ -31,7 +31,7 @@ const p = new Person();
 
 console.log(p);
 // console.log(Person.age);
-p.sex = 'xxx';
+// p.sex = 'xxx';
 console.log(p);
 
 
