@@ -16,7 +16,11 @@ module.exports = {
     // 输出文件路径
     path: path.resolve(__dirname, 'dist'),
     // 打包后输出文件名
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    environment: {
+      // 不使用箭头函数
+      arrowFunction: false,
+    },
   },
   // 打包所需模块
   module: {
