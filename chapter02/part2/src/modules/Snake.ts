@@ -15,6 +15,9 @@ class Snake {
   }
 
   set X(value: number) {
+    if (value < 0 || value > 290) {
+      throw new Error('蛇撞墙了！');
+    }
     this.head.style.left = value + 'px';
   }
 
@@ -23,6 +26,9 @@ class Snake {
   }
 
   set Y(value: number) {
+    if (value < 0 || value > 290) {
+      throw new Error('蛇撞墙了！');
+    }
     this.head.style.top = value + 'px';
   }
 
@@ -32,5 +38,6 @@ class Snake {
     this.container.insertAdjacentHTML('beforeend', '<div></div>');
   }
 }
+
 
 export default Snake;
