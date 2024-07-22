@@ -46,11 +46,11 @@ module.exports = {
                       browsers: ['> 1%', 'last 2 versions'],
                     },
                   },
-               ],
-              ]
-            }
+                ],
+              ],
+            },
           },
-          'ts-loader'
+          'ts-loader',
         ],
         // 排除文件
         exclude: /node_modules/,
@@ -79,7 +79,7 @@ module.exports = {
           },
           'less-loader',
         ],
-      }
+      },
     ],
   },
   // 插件
