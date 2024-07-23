@@ -18,6 +18,8 @@ class Snake {
     if (value < 0 || value > 290) {
       throw new Error('蛇撞墙了！');
     }
+    // 蛇头移动，蛇身跟着移动
+    this.moveBody();
     this.head.style.left = value + 'px';
   }
 
@@ -29,6 +31,8 @@ class Snake {
     if (value < 0 || value > 290) {
       throw new Error('蛇撞墙了！');
     }
+    // 蛇头移动，蛇身跟着移动
+    this.moveBody();
     this.head.style.top = value + 'px';
   }
 
@@ -36,6 +40,18 @@ class Snake {
   addBody() {
     // 在蛇容器的末尾插入一个 div
     this.container.insertAdjacentHTML('beforeend', '<div></div>');
+  }
+
+  moveBody() {
+    // 将所有蛇身体向右移动
+    for (let i = this.bodies.length - 1; i > 0; i--) {
+      // 获取前边身体位置
+      const X = (this.bodies[i - 1] as HTMLElement).offsetLeft;
+      const Y = (this.bodies[i - 1] as HTMLElement).offsetTop;
+      // 将值设置到当前身体上
+      (this.bodies[i] as HTMLElement).style.left = X + 'px';
+      (this.bodies[i] as HTMLElement).style.top = Y + 'px';
+    }
   }
 }
 

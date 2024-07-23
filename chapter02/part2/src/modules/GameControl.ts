@@ -31,23 +31,7 @@ class GameControl {
   keydownHandle(event: KeyboardEvent) {
     // console.log('@@@', this)
     // 获取按键值
-    const key = event.key;
-    this.direction = key;
-
-    return;
-    // 根据按键值修改蛇的坐标
-    switch (key) {
-      case 'ArrowUp':
-        this.snake.Y -= 10;
-        break;
-      case 'ArrowDown':
-        this.snake.Y += 10;
-        break;
-      case 'ArrowLeft':
-        this.snake.X -= 10;
-        break;
-      case 'ArrowRight':
-    }
+    this.direction = event.key;
   }
 
   run() {
@@ -66,6 +50,9 @@ class GameControl {
         case 'ArrowRight':
           this.snake.X += 10;
           break;
+        default:
+          this.is_alive = false;
+          break;
       }
     } catch (error) {
       this.is_alive = false;
@@ -78,7 +65,7 @@ class GameControl {
     this.is_alive && setTimeout(() => {
       console.log('走起~！')
       this.run();
-    }, 500);
+    }, 200);
   }
 
   checkEat() {
